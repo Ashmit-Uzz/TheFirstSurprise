@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Devanshi!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(45deg, #ff758c, #ff7eb3, #ff758c, #ff3e6b);
+            background-size: 400% 400%;
+            animation: gradientBG 4s ease-in-out infinite alternate;
+            color: #fff;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        header, footer {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        h1 {
+            font-size: 3em;
+            font-weight: 700;
+            color: #fff;
+        }
+        p {
+            font-size: 1.4em;
+            line-height: 1.8;
+            color: #fff;
+        }
+        .heart {
+            font-size: 80px;
+            color: #ff4757;
+            animation: heartbeat 1.5s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .video, .playlist {
+            margin-top: 40px;
+            opacity: 0;
+            transform: translateY(100px) scale(0.9);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .show {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        footer {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2em;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <header>✨ A Birthday Surprise Just for You! ✨</header>
+    <div class="container">
+        <h1>🎉 Happy Birthday, Devanshi! 🎂</h1>
+        <p>I'm so grateful to have you with me. You make life brighter, every moment special, and my heart happier. Wishing you a year filled with love, laughter, and dreams coming true!</p>
+        <p><i>Ummahh!</i> 😘❤️</p>
+        <p class="heart">❤️</p>
+        
+        <div class="video" id="videoSection">
+            <h2>🎥 A Special Message for You</h2>
+            <iframe src="YOUR_VIDEO_LINK_HERE" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <div class="playlist" id="playlistSection">
+            <h2>🎶 A Perfect Romantic Playlist </h2>
+            <a href="https://open.spotify.com/playlist/4MUPRdhj5HWuoDVweXf8Wo?si=C40H71vKSa6GU3fkOX8aXg" target="_blank">
+                <img src="https://i.imgur.com/lcHZQI6.png" alt="Spotify Playlist" style="width: 100%; height: auto; border-radius: 15px; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);">
+            </a>
+        </div>
+    </div>
+    <footer>💕 Made with love 💕 <br> ~ Your AMINI ❤️ </footer>
+    
+    <script>
+        function revealOnScroll() {
+            const elements = [document.getElementById('videoSection'), document.getElementById('playlistSection')];
+            const windowHeight = window.innerHeight;
+            
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < windowHeight * 0.8) {
+                    el.classList.add('show');
+                } else {
+                    el.classList.remove('show');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+    </script>
+</body>
+</html>
